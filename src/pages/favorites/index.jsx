@@ -22,6 +22,7 @@ import * as S from '../../pages/PlayList/styles';
 export const Favorites = () => {
   const dispatch = useDispatch();
   const [disabled, setDisabled] = useState(false);
+  const [message, setMessage] = useState('');
   const tokenRefresh = JSON.parse(localStorage.getItem('tokenRefresh'));
   let tokenAccess = JSON.parse(localStorage.getItem('tokenAccess'));
 
@@ -40,7 +41,7 @@ export const Favorites = () => {
           localStorage.setItem('tokenAccess', JSON.stringify(newAccess));
           refetch();
         } catch (error) {
-          error.message = 'Токен протух'
+          error.message = 'Токен протух';
           console.error('Error refreshing access token', error);
         }
       }
@@ -48,6 +49,14 @@ export const Favorites = () => {
 
     refresh();
   }, [isError, refetch, tokenRefresh]);
+
+  useEffect(() => {
+    if (favoriteMusic.length === 0) {
+      setMessage('Еще нет любимых треков');
+    } else {
+      setMessage('');
+    }
+  }, [favoriteMusic.length]);
 
   useEffect(() => {
     dispatch(setLoading(isLoading));
@@ -159,6 +168,7 @@ export const Favorites = () => {
     <>
       <S.CenterBlockH2>Любимые треки</S.CenterBlockH2>
       <S.CenterBlockContent>
+        <S.Message>{message}</S.Message>
         <ContentTitle />
         {isError ? (
           <ErrorBlock isError={isError} />

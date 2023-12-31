@@ -16,7 +16,7 @@ export const NavLogo = styled.div`
   height: 43px;
   background-color: transparent;
   margin-top: 17px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   @media screen and (max-width: 600px) {
     margin-top: 0;
   }
@@ -27,7 +27,7 @@ export const NavBurger = styled.div`
     width: 20px;
     height: 36px;
     padding: 13px 0;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

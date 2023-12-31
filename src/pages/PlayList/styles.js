@@ -320,3 +320,8 @@ export const LikeButton = styled.button`
     opacity: 100%;
   }
 `;
+
+export const Message = styled.h2`
+  color: var(--btn-border-text-hover);
+  margin-bottom: 30px;
+`;

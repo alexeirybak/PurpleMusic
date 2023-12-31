@@ -28,11 +28,12 @@ export const ModalLogo = styled.div`
   justify-content: center;
   margin-bottom: 34px;
   background-color: transparent;
+  align-items: center;
 `;
 
 export const ModalLogoImage = styled.img`
-  width: 140px;
-  height: 21px;
+  width: auto;
+  height: auto;
 `;
 
 export const ModalInput = styled.input`
@@ -124,4 +125,12 @@ export const Error = styled.div`
   line-height: 24px;
   margin-top: 20px;
   text-align: center;
+`;
+
+export const LogoImg = styled.img``;
+export const PM = styled.h1``;
+export const LogoBlock = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
